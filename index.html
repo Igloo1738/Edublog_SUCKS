@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graeson Beatty's Profile</title>
+  <!-- Add any additional styles or scripts here -->
+</head>
+<body>
+
+<!-- Profile Section 1 -->
+<p class="has-dark-gray-color has-white-background-color has-text-color has-background"><strong>My name is Graeson Beatty. I currently have 4 pets. This includes 3 cats and 1 guinea pig; the cats' names are Oreo, Luci, and Potato. My guinea pig's name is Frosty, like the snowman. Oreo is the oldest of the cats while Potato is the youngest. I got Potato from my friend, Riko.</strong></p>
+
+<!-- Profile Section 2 -->
+<p class="has-dark-gray-color has-white-background-color has-text-color has-background"><strong>I grew up in Strasburg, which is where I currently reside. I often find myself indulged in developing and playing video games. I've even released my own Virtual Reality game, <a rel="noreferrer noopener" href="https://sidequestvr.com/app/25136/untitled-infinite-runner" data-type="URL" data-id="https://sidequestvr.com/app/25136/untitled-infinite-runner" target="_blank">Untitled Infinite Runner.</a></strong></p>
+
+<!-- Image Section -->
+<figure class="wp-block-image size-full is-resized">
+  <img src="https://rizz114023.edublogs.org/files/2024/01/image-1.png" alt="" class="wp-image-17" width="386" height="245"/>
+</figure>
+
+<!-- Profile Section 3 -->
+<p class="has-dark-gray-color has-white-background-color has-text-color has-background"><strong>My favorite color is a blue-ish purple. The Hex value of my favorite color is 4e00f5. I don't really find myself enjoying one specific song, but if I had to guess I'd say my favorite songs are <em>Skyfall</em> or <em>Mattel</em>. One of my favorite books used to be <em>"City of Ember: People of Sparks,"</em> but I also like <em>"The Giver"</em>.</strong></p>
+
+<!-- Image Section -->
+<figure class="wp-block-image size-full is-resized">
+  <img src="https://rizz114023.edublogs.org/files/2024/01/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-1.png" alt="" class="wp-image-15" width="385" height="291"/>
+</figure>
+
+<!-- Profile Section 4 -->
+<p class="has-dark-gray-color has-white-background-color has-text-color has-background"><strong>My absolute favorite flavor of ice cream is mint chocolate chip. Really anything with mint and chocolate I find enjoyable. This includes the Oreos. In the future, I hope to be a video game developer and make a solid living. Last but not least, I love making sure what I create is unique and fun. I often try to add a humorous or relatable element to my creations.</strong></p>
+
+<!-- Guessing Game Section -->
+<p>Guess a number between 1 and 100:</p>
+<input type="number" id="guessInput">
+<button onclick="checkGuess()">Submit Guess</button>
+<button onclick="resetGame()">Reset Game</button>
+<p id="resultMessage"></p>
+<p>Number of Guesses: <span id="guessCount">0</span></p>
+
+<script>
+  var targetNumber;
+  var attempts = 0;
+  var guessedNumbers = [];
+
+  function checkGuess() {
+    var userGuess = document.getElementById('guessInput').value;
+
+    if (guessedNumbers.includes(userGuess)) {
+      document.getElementById('resultMessage').innerHTML = 'You already guessed that number. Try a different one.';
+    } else {
+      guessedNumbers.push(userGuess);
+      attempts++;
+
+      if (userGuess == targetNumber) {
+        document.getElementById('resultMessage').innerHTML = `Congratulations! You guessed the correct number in ${attempts} attempts.`;
+      } else if (userGuess < targetNumber) {
+        document.getElementById('resultMessage').innerHTML = 'Too low. Try again.';
+      } else {
+        document.getElementById('resultMessage').innerHTML = 'Too high. Try again.';
+      }
+
+      document.getElementById('guessCount').innerText = attempts;
+    }
+  }
+
+  function resetGame() {
+    targetNumber = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    guessedNumbers = [];
+    document.getElementById('guessInput').value = '';
+    document.getElementById('resultMessage').innerHTML = '';
+    document.getElementById('guessCount').innerText = '0';
+  }
+</script>
+
+<!-- YouTube Video Embed -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kKWiojGkaDY" frameborder="0" allowfullscreen></iframe>
+
+<!-- Add any additional content or scripts here -->
+
+</body>
+</html>
